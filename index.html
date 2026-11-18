@@ -227,6 +227,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
 .outro { margin-top: 18px; padding-bottom: 46px; text-align: center; }
 .outro svg.art { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto; }
 .bye { margin: 0; font-family: var(--script); font-size: 54px; line-height: 1; }
+.credit { margin: 10px auto 0; max-width: 30ch; font-size: 14px; color: var(--ink-soft); }
 
 @media (max-width: 380px) {
   h1 { font-size: 50px; }
@@ -545,7 +546,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
     butterF:["200 г", "200 g", "14 ст. л.", "14 tbsp (1¾ sticks)"],
     butterAll: ["80 + 200 г", "80 + 200 g", "5½ + 14 ст. л.", "5½ + 14 tbsp"],
     sugarF: ["140 г", "140 g", "⅔ чашки + 2 ч. л.", "⅔ cup + 2 tsp"],
-    cardF:  ["25 г", "25 g", "4 ст. л.", "4 tbsp"],
+    cardF:  ["25 г", "25 g", "4 ст. л. + 1 ч. л.", "4 tbsp + 1 tsp"],
     cardF2: ["20 г", "20 g", "3 ст. л. + 1 ч. л.", "3 tbsp + 1 tsp"],
     saltF:  ["2 г", "2 g", "⅓ ч. л.", "⅓ tsp"],
     van:    ["1 ч. л.", "1 tsp", "1 ч. л.", "1 tsp"],
@@ -554,9 +555,10 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
     lemon:  ["½ лимона", "½ lemon", "½ лимона", "½ lemon"],
     sugarT: ["2 ст. л.", "2 tbsp", "2 ст. л.", "2 tbsp"],
     pods:   ["10–12 шт.", "10–12 pods", "10–12 шт.", "10–12 pods"],
-    half:   ["~730 г", "~730 g", "~1,6 фунта", "~1.6 lb"],
+    half:   ["~720 г", "~720 g", "~1,6 фунта", "~1.6 lb"],
     bunW:   ["~115 г", "~115 g", "~4 унції", "~4 oz"],
     t3035:  ["30–35°C", "30–35°C", "86–95°F", "86–95°F"],
+    t3538:  ["35–38°C", "35–38°C", "95–100°F", "95–100°F"],
     t2528:  ["25–28°C", "25–28°C", "77–82°F", "77–82°F"],
     t40:    ["40°C", "40°C", "104°F", "104°F"],
     t50:    ["50°C", "50°C", "122°F", "122°F"],
@@ -585,6 +587,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       nowPrefix: "зараз за планом: ", nowTag: "зараз",
       reset: "скинути всі відмітки", resetArm: "натисни ще раз, щоб скинути", resetDone: "відмітки скинуто",
       bye: "Смачного!",
+      credit: "Основа: Swedish Cinnamon Buns (Cecilia Tolone, Fest &amp; Fika) і булочка Cardy B",
       knot: ["пласт + начинка", "утричі", "надрізати", "вузлик"],
       knotAlt: "Схема: пласт з начинкою, складений утричі, надрізана смужка, готовий вузлик",
       trayAlt: "Деко з чотирма спеченими вузликами"
@@ -602,6 +605,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       nowPrefix: "right now: ", nowTag: "now",
       reset: "clear all ticks", resetArm: "tap again to clear", resetDone: "ticks cleared",
       bye: "Enjoy!",
+      credit: "Based on Swedish Cinnamon Buns by Cecilia Tolone (Fest &amp; Fika) and the Cardy B bun",
       knot: ["sheet + filling", "fold in thirds", "slit", "knot"],
       knotAlt: "Diagram: filled sheet, folded in thirds, a slit strip, the finished knot",
       trayAlt: "A tray of four baked knots"
@@ -614,25 +618,25 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       usNote: { uk: "Чашка = 240 мл. Борошно насипай у чашку ложкою, не утрамбовуй.", en: "1 cup = 240 ml. Spoon the flour into the cup, don't pack it." },
       items: [
         { id: "i-flour", art: "flour", name: { uk: "Борошно в/г", en: "All-purpose flour" }, q: "flour" },
-        { id: "i-milk", art: "milk", name: { uk: "Молоко 1,5–2,5%", en: "Milk, low-fat" }, q: "milk", extra: { uk: "+ {milkR} у резерв", en: "+ {milkR} in reserve" } },
+        { id: "i-milk", art: "milk", name: { uk: "Молоко 1,5–2,5%", en: "Milk, 1.5–2.5% fat" }, q: "milk", extra: { uk: "+ {milkR} у резерв", en: "+ {milkR} in reserve" } },
         { id: "i-egg", art: "egg", name: { uk: "Яйце", en: "Egg" }, q: "egg" },
         { id: "i-sugar", art: "sugar", name: { uk: "Цукор", en: "Sugar" }, q: "sugarD" },
-        { id: "i-salt", art: "salt", name: { uk: "Сіль", en: "Salt" }, q: "salt" },
+        { id: "i-salt", art: "salt", name: { uk: "Сіль", en: "Fine salt" }, q: "salt" },
         { id: "i-yeast", art: "yeast", yeast: {
             instant: { name: { uk: "Дріжджі швидкодіючі", en: "Instant yeast" }, q: "yInstant" },
             active:  { name: { uk: "Дріжджі сухі звичайні", en: "Active dry yeast" }, q: "yActive" },
             fresh:   { name: { uk: "Дріжджі свіжі", en: "Fresh yeast" }, q: "yFresh" } } },
         { id: "i-card1", art: "spice", name: { uk: "Кардамон мелений", en: "Ground cardamom" }, q: "cardD" },
-        { id: "i-butter1", art: "butter", name: { uk: "Масло 82%, м'яке", en: "Butter, soft" }, q: "butterD" }
+        { id: "i-butter1", art: "butter", name: { uk: "Масло 82%, м'яке", en: "Unsalted butter, soft" }, q: "butterD" }
       ] },
     { title: { uk: "Начинка", en: "Filling" },
       note: { uk: "Свіжозмелений з коробочок кардамон сильніший: тоді вистачить {cardF2}.", en: "Freshly ground from pods is stronger: {cardF2} is enough then." },
       items: [
-        { id: "i-butter2", art: "butter", name: { uk: "Масло м'яке", en: "Soft butter" }, q: "butterF" },
+        { id: "i-butter2", art: "butter", name: { uk: "Масло м'яке", en: "Soft unsalted butter" }, q: "butterF" },
         { id: "i-sugar2", art: "sugar", name: { uk: "Цукор", en: "Sugar" }, q: "sugarF" },
         { id: "i-card2", art: "spice", name: { uk: "Кардамон мелений", en: "Ground cardamom" }, q: "cardF" },
-        { id: "i-salt2", art: "salt", name: { uk: "Сіль", en: "Salt" }, q: "saltF" },
-        { id: "i-van", art: "vanilla", name: { uk: "Ванільний цукор", en: "Vanilla sugar" }, q: "van", extra: { uk: "за бажанням", en: "optional" } }
+        { id: "i-salt2", art: "salt", name: { uk: "Сіль", en: "Fine salt" }, q: "saltF" },
+        { id: "i-van", art: "vanilla", name: { uk: "Ванільний цукор", en: "Vanilla sugar" }, q: "van", extra: { uk: "за бажанням", en: "optional, or ½ tsp vanilla extract" } }
       ] },
     { title: { uk: "Сироп", en: "Syrup" },
       items: [
@@ -659,7 +663,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       ["p-0b", { uk: "Яйце", en: "The egg" }] ] },
     { icon: true, yeast: "active", start: "16:15", end: "16:30", title: { uk: "Активувати дріжджі", en: "Proof the yeast" },
       tag: { uk: "лише для звичайних сухих", en: "active dry yeast only" }, steps: [
-      ["p-aa", { uk: "Підігрій {milk} молока до {t3035}, всип {yActive} дріжджів і щіпку цукру.", en: "Warm {milk} milk to {t3035}, stir in {yActive} yeast and a pinch of sugar." }],
+      ["p-aa", { uk: "Підігрій {milk} молока до {t3538}, всип {yActive} дріжджів і щіпку цукру.", en: "Warm {milk} milk to {t3538}, stir in {yActive} yeast and a pinch of sugar." }],
       ["p-ab", { uk: "Зачекай 10–15 хв, поки з'явиться піна. Якщо через 30 хв бульбашок немає, дріжджі мертві.", en: "Wait 10–15 min until foamy. No bubbles after 30 min means the yeast is dead." }] ] },
     { num: 1, start: "16:30", end: "16:45", title: { uk: "Заміс без масла", en: "Mix, no butter yet" }, steps: [
       ["p-1a", {
@@ -694,7 +698,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       sub: { uk: "поки тісто в холоді", en: "while it chills" }, steps2: [
       ["p-4c", { uk: "18:20 · Начинка: розітри масло з цукром, кардамоном, сіллю і ваніллю до пасти. У холодильник не став.", en: "18:20 · Filling: beat the butter with the sugar, cardamom, salt and vanilla to a paste. Keep it out of the fridge." }],
       ["p-4d", { uk: "18:30 · Сироп: воду, цукор і лимонний сік довести до кипіння, зняти з вогню.", en: "18:30 · Syrup: bring the water, sugar and lemon juice to a boil, take off the heat." }],
-      ["p-4e", { uk: "Розтовкти зерна кардамону, змішати з цукром для посипки.", en: "Crush the cardamom seeds and mix them with the topping sugar." }],
+      ["p-4e", { uk: "Дістати зерна з коробочок кардамону, злегка розтовкти, змішати з цукром для посипки.", en: "Take the seeds out of the cardamom pods, crush them lightly and mix with the topping sugar." }],
       ["p-4f", { uk: "Застелити 2 деки пергаментом.", en: "Line 2 baking trays with parchment." }] ] },
     { num: 5, start: "18:50", end: "19:25", title: { uk: "Формування вузликів", en: "Shape the knots" },
       noteBefore: { uk: "Одна половина в роботі, друга чекає в холодильнику.", en: "Work with one half; the other waits in the fridge." }, diagram: true, steps: [
@@ -902,7 +906,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       '<use href="#egg" x="122" y="40" width="54" height="54"/>' +
       '<use href="#pin" x="132" y="78" width="164" height="41" transform="rotate(-8 214 98)"/>' +
       '<use href="#pods" x="210" y="4" width="70" height="70"/>' +
-      '</svg><p class="bye">' + L().bye + '</p></div>';
+      '</svg><p class="bye">' + L().bye + '</p><p class="credit">' + L().credit + '</p></div>';
   }
   function corners(which) {
     return which.map(function (c) { return '<svg class="corner ' + c + '" viewBox="0 0 120 120" aria-hidden="true"><use href="#sprig"/></svg>'; }).join("");
