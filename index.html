@@ -682,13 +682,13 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       items: [
         { id: "i-tools1", art: "bowl", name: { uk: "Миска, скребок або ніж", en: "Bowl, scraper or knife" } },
         { id: "i-tools2", art: "pin", name: { uk: "Качалка, плівка", en: "Rolling pin, cling film" } },
-        { id: "i-tools3", art: "tray", name: { uk: "2 деки, пергамент, пензлик", en: "2 trays, parchment, brush" } }
+        { id: "i-tools3", art: "tray", name: { uk: "2 дека, пергамент, пензлик", en: "2 trays, parchment, brush" } }
       ] }
   ];
 
   var STAGES = [
     { icon: true, o: -60, e: 0, title: { uk: "Дістати з холодильника", en: "Take out of the fridge" }, steps: [
-      ["p-0a", { uk: "Масло {butterAll}: має стати м'яким, як крем", en: "Butter, {butterAll}: it should get soft as cream" }],
+      ["p-0a", { uk: "Масло {butterAll}: має стати м'яким.", en: "Butter, {butterAll}: it should soften." }],
       ["p-0b", { uk: "Яйце", en: "The egg" }] ] },
     { icon: true, yeast: "active", o: -15, e: 0, title: { uk: "Активувати дріжджі", en: "Proof the yeast" },
       tag: { uk: "лише для звичайних сухих", en: "active dry yeast only" }, steps: [
@@ -696,59 +696,58 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       ["p-ab", { uk: "Зачекай 10–15 хв, поки з'явиться піна. Якщо за 30 хв бульбашок немає, дріжджі зіпсовані, потрібні нові.", en: "Wait 10–15 min until foamy. No bubbles after 30 min means the yeast is dead." }] ] },
     { num: 1, o: 0, e: 15, title: { uk: "Заміс без масла", en: "Mix, no butter yet" }, steps: [
       ["p-1a", {
-        instant: { uk: "Підігрій {milk} молока до {t3035}: приємно тепле, не гаряче. Додай яйце.", en: "Warm {milk} milk to {t3035}: pleasantly warm, not hot. Add the egg." },
+        instant: { uk: "Підігрій {milk} молока до кімнатної температури (можна в розігрітій духовці або в мікрохвильовці). Додай яйце.", en: "Warm {milk} milk to room temperature (in a warm oven or the microwave). Add the egg." },
         active:  { uk: "У молоко з активованими дріжджами додай яйце.", en: "Add the egg to the milk with the proofed yeast." },
-        fresh:   { uk: "Підігрій {milk} молока до {t3035}, розкриш у нього {yFresh} дріжджів, додай яйце.", en: "Warm {milk} milk to {t3035}, crumble in {yFresh} fresh yeast, add the egg." } }],
+        fresh:   { uk: "Підігрій {milk} молока до кімнатної температури (можна в розігрітій духовці або в мікрохвильовці), розкриш у нього {yFresh} дріжджів, додай яйце.", en: "Warm {milk} milk to room temperature (in a warm oven or the microwave), crumble in {yFresh} fresh yeast, add the egg." } }],
       ["p-1b", {
         instant: { uk: "У мисці змішай борошно, цукор, сіль, {cardD} кардамону і {yInstant} швидкодіючих дріжджів.", en: "In a bowl, mix the flour, sugar, salt, {cardD} cardamom and {yInstant} instant yeast." },
         active:  { uk: "У мисці змішай борошно, цукор, сіль і {cardD} кардамону.", en: "In a bowl, mix the flour, sugar, salt and {cardD} cardamom." },
         fresh:   { uk: "У мисці змішай борошно, цукор, сіль і {cardD} кардамону.", en: "In a bowl, mix the flour, sugar, salt and {cardD} cardamom." } }],
-      ["p-1c", { uk: "Влий рідину. Перемішай лопаткою, потім рукою, поки не зникне сухе борошно. Тісто буде грудкувате, це нормально.", en: "Pour in the liquid. Stir with a spatula, then by hand, until no dry flour is left. Shaggy is fine." }],
+      ["p-1c", { uk: "Влий рідину. Перемішай лопаткою, потім рукою, поки не зникне сухе борошно. Тісто може бути з грудочками, це нормально.", en: "Pour in the liquid. Stir with a spatula, then by hand, until no dry flour is left. A few lumps are fine." }],
       ["p-1d", { uk: "Лишилися сухі грудочки або борошно «сильне» (білка 12% і більше)? Додай {milkR} молока про запас.", en: "Dry bits left, or a strong flour (12%+ protein)? Add the reserve {milkR} milk." }] ] },
     { rest: true, o: 15, e: 35, title: { uk: "відпочинок 20 хв", en: "rest 20 min" },
-      text: { uk: "Накрий миску. Клейковина почне формуватися сама.", en: "Cover the bowl. The gluten starts forming on its own." } },
+      text: { uk: "Накрий кухонним рушником та відстав у тепле місце.", en: "Cover with a kitchen towel and set aside somewhere warm." } },
     { num: 2, o: 35, e: 50, title: { uk: "Вимішування без масла", en: "Knead, no butter" }, steps: [
       ["p-2a", { uk: "Виклади тісто на чистий стіл без борошна.", en: "Tip the dough onto a clean, unfloured counter." }],
-      ["p-2b", { uk: "Місі 12–15 хв: тисни основою долоні від себе, складай навпіл, повертай на 90°.", en: "Knead 12–15 min: push away with the heel of your hand, fold in half, turn 90°." }],
-      ["p-2c", { uk: "Борошно не підсипай (максимум 1–2 ст. л. за весь час). Липке тісто знімай скребком.", en: "Don't add flour (1–2 tbsp at most in total). Lift sticky dough with a scraper." }],
-      ["p-2d", { uk: "Готове тісто гладке, пружне і ледь липке.", en: "It's ready when smooth, springy and barely tacky." }] ] },
+      ["p-2b", { uk: "Міси 12–15 хв.", en: "Knead for 12–15 min." }],
+      ["p-2c", { uk: "Борошно не підсипай (максимум 1–2 ст. л. за весь час).", en: "Don't add flour (1–2 tbsp at most in total)." }],
+      ["p-2d", { uk: "Готове тісто має вийти гладким, пружним і ледь липнути до рук.", en: "The finished dough should be smooth, springy and only slightly sticky." }] ] },
     { rest: true, o: 50, e: 60, title: { uk: "відпочинок 10 хв", en: "rest 10 min" },
-      text: { uk: "Накрий перевернутою мискою. Масло потім увійде легше.", en: "Cover with the upturned bowl. The butter will go in more easily." } },
+      text: { uk: "Накрий рушником та залиш на 10 хвилин відпочити.", en: "Cover with a towel and let it rest for 10 minutes." } },
     { num: 3, o: 60, e: 75, title: { uk: "Додаємо масло", en: "Work in the butter" }, steps: [
-      ["p-3a", { uk: "Додай {butterD} м'якого масла у три прийоми. Тісто стане слизьким, але через 2–3 хв знову збереться.", en: "Add {butterD} soft butter in three goes. The dough turns slippery, then comes back together in 2–3 min." }],
-      ["p-3b", { uk: "Після останньої порції місі ще 8–10 хв до шовковистого тіста.", en: "After the last piece, knead 8–10 min more until silky." }],
-      ["p-3c", { uk: "Тест «віконце»: розтягни шматочок вологими пальцями. Має тягнутися тонко і рватися з рівними краями.", en: "Windowpane test: stretch a piece with wet fingers. It should go thin and tear with smooth edges." }],
-      ["p-3d", { uk: "Скатай у кулю, поклади в змащену миску, накрий.", en: "Shape into a ball, put it in a greased bowl, cover." }] ] },
+      ["p-3a", { uk: "Додай {butterD} м'якого масла у три прийоми. Тісто стане вологим, але через 2–3 хв знову збереться.", en: "Add {butterD} soft butter in three goes. The dough turns wet, then comes back together in 2–3 min." }],
+      ["p-3b", { uk: "Після останньої порції замішуй ще 8–10 хв до шовковистого тіста.", en: "After the last piece, knead 8–10 min more until silky." }],
+      ["p-3d", { uk: "Збери в кульку, поклади у змащену миску, накрий.", en: "Gather into a ball, put it in a greased bowl, cover." }] ] },
     { rest: true, o: 75, e: 105, title: { uk: "у теплі 30 хв", en: "30 min somewhere warm" },
       text: { uk: "О {@90} зроби одне складання: підтягни край тіста вгору і поклади на центр, з усіх чотирьох боків.", en: "At {@90}, one set of folds: lift an edge of the dough and lay it over the centre, on all four sides." } },
     { num: 4, o: 105, e: 140, title: { uk: "Охолодження", en: "Chill" }, steps: [
-      ["p-4a", { uk: "Розплющ тісто в прямокутник завтовшки {d2cm}.", en: "Flatten the dough into a rectangle {d2cm} thick." }],
+      ["p-4a", { uk: "Притисни тісто, щоб вийшов прямокутник.", en: "Press the dough into a rectangle." }],
       ["p-4b", { uk: "Загорни в плівку і постав у холодильник на 30–35 хв.", en: "Wrap in film and chill for 30–35 min." }] ],
       sub: { uk: "поки тісто в холоді", en: "while it chills" }, steps2: [
       ["p-4c", { uk: "{@110} · Начинка: розітри масло з цукром, кардамоном, сіллю і ванільним цукром до однорідної пасти. У холодильник не став.", en: "{@110} · Filling: beat the butter with the sugar, cardamom, salt and vanilla to a paste. Keep it out of the fridge." }],
       ["p-4d", { uk: "{@120} · Сироп: доведи воду, цукор і лимонний сік до кипіння і зніми з вогню.", en: "{@120} · Syrup: bring the water, sugar and lemon juice to a boil, take off the heat." }],
-      ["p-4e", { uk: "Дістань зерна з коробочок кардамону, злегка розтовчи і змішай з цукром для посипки.", en: "Take the seeds out of the cardamom pods, crush them lightly and mix with the topping sugar." }],
-      ["p-4f", { uk: "Застели 2 деки пергаментом.", en: "Line 2 baking trays with parchment." }] ] },
+      ["p-4e", { uk: "Дістань зерна кардамону, злегка розтовчи і подрібни електричним або ручним млинком, потім змішай з цукром для посипки. Можна використовувати вже змелений кардамон, якщо купили саме такий.", en: "Take the cardamom seeds out of the pods, crush them lightly and grind in an electric or hand grinder, then mix with the topping sugar. Ready-ground cardamom works too if that's what you bought." }],
+      ["p-4f", { uk: "Застели 2 дека пергаментом.", en: "Line 2 baking trays with parchment." }] ] },
     { num: 5, o: 140, e: 175, title: { uk: "Формування булочок", en: "Shape the knots" },
       diagram: true, steps: [
-      ["p-5a", { uk: "Розкачай у прямокутник {sheet}, завтовшки {thick}.", en: "Roll out to a {sheet} rectangle, {thick} thick." }],
+      ["p-5a", { uk: "Розкачай тісто у прямокутник {sheet}, завтовшки {thick}.", en: "Roll the dough out to a {sheet} rectangle, {thick} thick." }],
       ["p-5b", { uk: "Рівно розподіли всю начинку по пласту, до самих країв.", en: "Spread all the filling over the sheet, right to the edges." }],
       ["p-5c", { uk: "Склади пласт навпіл, щоб накрити начинку. Вийде {fold}.", en: "Fold the sheet in half to cover the filling. It will be about {fold}." }],
-      ["p-5d", { uk: "Злегка розкачай складений пласт до {roll}, щоб шари злиплися.", en: "Roll it out lightly to {roll} so the layers stick together." }],
+      ["p-5d", { uk: "Злегка розкачай складене тісто до {roll}, щоб шари злиплися.", en: "Roll the folded dough out lightly to {roll} so the layers stick together." }],
       ["p-5e", { uk: "Наріж поперек довшої сторони на 16 вузьких смужок завширшки {strip} (кожна завдовжки {stripL}).", en: "Cut across the long side into 16 narrow strips, {strip} wide ({stripL} long)." }],
       ["p-5f", { uk: "Скрути кожну смужку джгутом: тримай за кінці й крути їх у протилежні боки, злегка розтягуючи до {stretch}.", en: "Twist each strip into a rope: hold the ends and turn them in opposite directions, stretching gently to {stretch}." }],
       ["p-5g", { uk: "Намотай джгут двічі на два пальці, кінчик протягни через центр і заховай знизу.", en: "Wrap the rope twice around two fingers, pull the end through the middle and tuck it underneath." }],
-      ["p-5h", { uk: "Виклади булочки на 2 деки, по 8 на кожне, з проміжками.", en: "Space the knots out on 2 trays, 8 per tray." }] ] },
+      ["p-5h", { uk: "Виклади булочки на 2 дека, по 8 на кожне, з проміжками.", en: "Space the knots out on 2 trays, 8 per tray." }] ] },
     { num: 6, o: 160, e: 240, title: { uk: "Розстойка 1–1,5 год", en: "Proof 1–1½ h" }, steps: [
-      ["p-6a", { uk: "Накрий деки плівкою. Постав у вимкнену духовку з мискою окропу на дні, *{t2528}*.", en: "Cover the trays with film. Set them in the switched-off oven with a bowl of boiling water below, *{t2528}*." }],
+      ["p-6a", { uk: "Накрий дека плівкою. Постав у вимкнену духовку з мискою окропу на дні, щоб повітря було тепле і вологе.", en: "Cover the trays with film. Set them in the switched-off oven with a bowl of boiling water below, so the air stays warm and humid." }],
       ["p-6b", { uk: "Через 30–40 хв заміни окріп.", en: "Refresh the hot water after 30–40 min." }],
-      ["p-6c", { uk: "Готовність: булочки збільшилися в 1,5–2 рази, ямка від пальця повільно вирівнюється.", en: "Ready when 1½–2 times bigger and a fingertip dent springs back slowly." }],
-      ["p-6d", { uk: "~{@210} · Дістань деки з духовки і ввімкни розігрів на *{t210}*, верх-низ.", en: "~{@210} · Take the trays out and preheat to *{t210}*, top and bottom heat." }] ] },
+      ["p-6c", { uk: "Готовність: булочки збільшилися в 1,5–2 рази.", en: "Ready when 1½–2 times bigger." }],
+      ["p-6d", { uk: "~{@210} · Дістань дека з духовки і ввімкни розігрів на *{t210}*, верх-низ.", en: "~{@210} · Take the trays out and preheat to *{t210}*, top and bottom heat." }] ] },
     { num: 7, o: 240, e: 270, title: { uk: "Випікання і сироп", en: "Bake and glaze" }, steps: [
-      ["p-7a", { uk: "Перше деко: 10–13 хв. На 6-й хвилині розверни деко.", en: "First tray: 10–13 min. Turn it around at minute 6." }],
+      ["p-7a", { uk: "Випікай 10–13 хвилин. На 6-й хвилині розверни деко, щоб пропеклося рівномірно.", en: "Bake for 10–13 minutes. Turn the tray around at minute 6 so it bakes evenly." }],
       ["p-7b", { uk: "*Одразу з печі* змасти теплим сиропом і посип цукром з кардамоном.", en: "*Straight from the oven*, brush with warm syrup and sprinkle with the cardamom sugar." }],
-      ["p-7c", { uk: "Друге деко випікай так само.", en: "Same for the second tray." }] ],
-      noteAfter: { uk: "З конвекцією можна пекти обидва деки разом на {t200}, помінявши їх місцями посередині.", en: "With a fan oven, bake both trays at once at {t200}, swapping them halfway." } },
+      ["p-7c", { uk: "Другу порцію випікай так само.", en: "Bake the second batch the same way." }] ],
+      noteAfter: { uk: "З конвекцією можна пекти обидва дека разом на {t200}, помінявши їх місцями посередині.", en: "With a fan oven, bake both trays at once at {t200}, swapping them halfway." } },
     { finish: true, o: 270, e: 300, t: 280, title: { uk: "дай охолонути 10–15 хв і смакуй", en: "cool 10–15 min, then eat" } }
   ];
 
@@ -758,7 +757,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
     { title: { uk: "Дивись на тісто, а не на годинник", en: "Watch the dough, not the clock" },
       text: { uk: "У прохолодній кухні або із сухими дріжджами розстойка може тривати до 2 год. Тоді й розігрів духовки зсунь відповідно.", en: "In a cool kitchen, or with dry yeast, proofing can take up to 2 h. Shift the preheat to match." } },
     { title: { uk: "Спекти зранку", en: "Bake in the morning" },
-      text: { uk: "Після формування накрий деки плівкою і постав у холодильник на ніч. Зранку дай їм 45–60 хв у теплі, щоб підійшли, і випікай.", en: "After shaping, cover the trays and refrigerate overnight. In the morning, give them 45–60 min somewhere warm to rise, then bake." } }
+      text: { uk: "Після формування накрий дека плівкою і постав у холодильник на ніч. Зранку дай їм 45–60 хв у теплі, щоб підійшли, і випікай.", en: "After shaping, cover the trays and refrigerate overnight. In the morning, give them 45–60 min somewhere warm to rise, then bake." } }
   ];
 
   var VB = { pod: "0 0 40 60", butter: "0 0 100 60", pin: "0 0 160 40", tray: "0 0 160 64", lemon: "0 0 80 80" };
