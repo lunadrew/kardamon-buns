@@ -299,6 +299,13 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
         <path d="M1.5 0 C8 -.8 15 -.8 22 0"/>
       </g>
     </g>
+    <g id="lobe">
+      <path d="M2 -3 C12 -12 28 -13 37 -5 C42 -1 39 7 31 8 C22 10 12 7 4 4 C0 3 -1 -1 2 -3 Z" fill="#DFA352" filter="url(#wc)"/>
+      <path d="M7 -2 C15 -7 25 -8 32 -3" fill="none" stroke="#F6D28E" stroke-width="3.4" stroke-linecap="round" filter="url(#wc)"/>
+      <path d="M10 1 C18 0 26 -1 33 1" fill="none" stroke="#A5612A" stroke-width="2" stroke-linecap="round" opacity=".5" filter="url(#ink)"/>
+      <path d="M6 4.5 C14 7.5 23 8.5 31 7.5" fill="none" stroke="#7E461C" stroke-width="2.4" stroke-linecap="round" opacity=".55" filter="url(#ink)"/>
+      <path d="M2 -3 C12 -12 28 -13 37 -5 C42 -1 39 7 31 8 C22 10 12 7 4 4 C0 3 -1 -1 2 -3 Z" fill="none" stroke="#4B3427" stroke-width=".8" opacity=".5" filter="url(#ink)"/>
+    </g>
     <g id="flower">
       <g fill="#D99A62" filter="url(#wc)">
         <circle cx="0" cy="-3.4" r="2.6"/><circle cx="3.2" cy="-1" r="2.6"/><circle cx="2" cy="2.8" r="2.6"/>
@@ -328,29 +335,24 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   </symbol>
 
   <symbol id="bun" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <use href="#s-blob" fill="#A9692F" filter="url(#wc)"/>
-    <ellipse cx="50" cy="50" rx="29" ry="16" transform="rotate(-28 50 50)" fill="none" stroke="#E7B96F" stroke-width="14" filter="url(#wc)"/>
-    <ellipse cx="50" cy="50" rx="29" ry="16" transform="rotate(-28 50 50)" fill="none" stroke="#87521F" stroke-width="12" stroke-dasharray="2.4 5.6" opacity=".75" filter="url(#ink)"/>
-    <g transform="rotate(-28 50 50)" fill="none" stroke="#4B3427" stroke-width=".9" opacity=".6" filter="url(#ink)"><ellipse cx="50" cy="50" rx="36" ry="23"/><ellipse cx="50" cy="50" rx="22" ry="9"/></g>
-    <ellipse cx="50" cy="51" rx="27" ry="15" transform="rotate(38 50 51)" fill="none" stroke="#EDC27A" stroke-width="13" filter="url(#wc)"/>
-    <ellipse cx="50" cy="51" rx="27" ry="15" transform="rotate(38 50 51)" fill="none" stroke="#87521F" stroke-width="11" stroke-dasharray="2.4 5.6" stroke-dashoffset="3" opacity=".75" filter="url(#ink)"/>
-    <g transform="rotate(38 50 51)" fill="none" stroke="#4B3427" stroke-width=".9" opacity=".6" filter="url(#ink)"><ellipse cx="50" cy="51" rx="33.5" ry="21.5"/><ellipse cx="50" cy="51" rx="20.5" ry="8.5"/></g>
-    <path d="M43 47 C50 38 63 45 57 55 C53 61 44 58 46 51" fill="none" stroke="#F0C780" stroke-width="10" stroke-linecap="round" filter="url(#wc)"/>
-    <path d="M43 47 C50 38 63 45 57 55 C53 61 44 58 46 51" fill="none" stroke="#87521F" stroke-width="8" stroke-dasharray="2 5" opacity=".75" filter="url(#ink)"/>
-    <ellipse cx="50" cy="50" rx="29" ry="16" transform="rotate(-28 50 50)" fill="none" stroke="#FBE3AE" stroke-width="2.4" stroke-dasharray="6 16" stroke-linecap="round" opacity=".9"/>
-    <ellipse cx="50" cy="51" rx="27" ry="15" transform="rotate(38 50 51)" fill="none" stroke="#FBE3AE" stroke-width="2.2" stroke-dasharray="5 17" stroke-dashoffset="8" stroke-linecap="round" opacity=".9"/>
-    <g fill="none" stroke="#4B3427" stroke-width="1.5" filter="url(#ink)"><use href="#s-blob"/></g>
-    <g fill="#FFFDF7">
-      <rect x="36" y="27" width="4.5" height="3.5" rx="1.2" transform="rotate(20 38 29)"/><circle cx="62" cy="29" r="2.2"/>
-      <rect x="71" y="45" width="4" height="3.5" rx="1.2" transform="rotate(-15 73 47)"/><circle cx="66" cy="68" r="2.3"/>
-      <rect x="40" y="69" width="4.5" height="3.6" rx="1.2" transform="rotate(35 42 71)"/><circle cx="27" cy="50" r="2.1"/>
-      <circle cx="52" cy="35" r="1.8"/><circle cx="56" cy="80" r="2"/><circle cx="22" cy="64" r="1.8"/>
-      <circle cx="80" cy="60" r="1.7"/><circle cx="31" cy="34" r="1.7"/>
+    <use href="#s-blob" fill="#B06C2C" filter="url(#wc)"/>
+    <g transform="translate(50 50)">
+      <use href="#lobe" transform="rotate(0) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(40) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(80) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(120) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(160) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(200) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(240) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(280) translate(7 0) rotate(-38) scale(.86 1.12)"/>
+      <use href="#lobe" transform="rotate(320) translate(7 0) rotate(-38) scale(.86 1.12)"/>
     </g>
-    <g fill="#3A2A1C" opacity=".6">
-      <circle cx="46" cy="31" r=".9"/><circle cx="69" cy="38" r="1"/><circle cx="58" cy="72" r=".9"/>
-      <circle cx="35" cy="62" r="1"/><circle cx="26" cy="41" r=".8"/><circle cx="76" cy="55" r=".9"/>
-    </g>
+    <circle cx="50" cy="50" r="6" fill="#C9883E" filter="url(#wc)"/>
+    <path d="M46 49 C48 45 54 46 54 50 C54 54 49 55 47 52" fill="none" stroke="#7E461C" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+    <g fill="none" stroke="#4B3427" stroke-width="1.3" opacity=".8" filter="url(#ink)"><use href="#s-blob"/></g>
+    <g fill="#FFFDF7"><circle cx="36" cy="30" r="2.3"/><circle cx="58" cy="28" r="2.0"/><circle cx="70" cy="42" r="2.4"/><circle cx="66" cy="64" r="2.2"/><circle cx="44" cy="70" r="2.4"/><circle cx="28" cy="52" r="2.0"/><circle cx="52" cy="40" r="1.8"/><circle cx="55" cy="79" r="1.9"/><circle cx="24" cy="65" r="1.7"/><circle cx="79" cy="58" r="1.7"/><circle cx="40" cy="22" r="1.6"/><circle cx="47" cy="58" r="1.8"/><circle cx="62" cy="52" r="1.6"/></g>
+    <g fill="#FFFDF7" opacity=".9"><circle cx="31" cy="40" r=".75"/><circle cx="42" cy="34" r=".75"/><circle cx="63" cy="36" r=".75"/><circle cx="73" cy="50" r=".75"/><circle cx="60" cy="72" r=".75"/><circle cx="36" cy="61" r=".75"/><circle cx="50" cy="30" r=".75"/><circle cx="68" cy="30" r=".75"/><circle cx="30" cy="70" r=".75"/><circle cx="48" cy="82" r=".75"/><circle cx="76" cy="66" r=".75"/><circle cx="22" cy="46" r=".75"/><circle cx="56" cy="60" r=".75"/><circle cx="40" cy="46" r=".75"/><circle cx="64" cy="82" r=".75"/><circle cx="82" cy="46" r=".75"/></g>
+    <g fill="#3A2A1C" opacity=".55"><circle cx="46" cy="36" r=".9"/><circle cx="66" cy="45" r="1"/><circle cx="57" cy="68" r=".9"/><circle cx="35" cy="56" r="1"/><circle cx="30" cy="33" r=".8"/></g>
   </symbol>
 
   <symbol id="bowl" viewBox="0 0 100 100">
@@ -402,17 +404,24 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   </symbol>
 
   <symbol id="sugar" viewBox="0 0 100 100">
-    <ellipse cx="50" cy="92" rx="27" ry="4" fill="#4B3427" opacity=".16"/>
-    <path d="M28 32 C26 36 24 40 24 46 L24 78 C24 85 29 89 36 89 L64 89 C71 89 76 85 76 78 L76 46 C76 40 74 36 72 32 Z" fill="#DCE9E7" opacity=".75" filter="url(#wc)"/>
-    <path d="M25 54 C36 50 64 50 75 54 L75 78 C75 84 70 88 64 88 L36 88 C30 88 25 84 25 78 Z" fill="#FFFEFA" filter="url(#wc)"/>
-    <g fill="#C9C0AF"><circle cx="34" cy="62" r=".9"/><circle cx="44" cy="70" r=".9"/><circle cx="58" cy="60" r=".9"/><circle cx="66" cy="72" r=".9"/><circle cx="50" cy="80" r=".9"/><circle cx="38" cy="79" r=".8"/><circle cx="62" cy="83" r=".8"/><circle cx="70" cy="63" r=".8"/></g>
-    <path d="M31 46 C30 56 30 68 32 79" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-    <path d="M26 20 L74 20 C76 20 77 22 77 24 L77 31 C77 33 76 34 74 34 L26 34 C24 34 23 33 23 31 L23 24 C23 22 24 20 26 20 Z" fill="#C0634A" filter="url(#wc)"/>
-    <g fill="#FAF4E8"><circle cx="29" cy="27" r="1.4"/><circle cx="35" cy="27" r="1.4"/><circle cx="41" cy="27" r="1.4"/><circle cx="47" cy="27" r="1.4"/><circle cx="53" cy="27" r="1.4"/><circle cx="59" cy="27" r="1.4"/><circle cx="65" cy="27" r="1.4"/><circle cx="71" cy="27" r="1.4"/></g>
-    <g fill="none" stroke="#4B3427" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#ink)">
-      <path d="M28 34 C26 37 24 41 24 46 L24 78 C24 85 29 89 36 89 L64 89 C71 89 76 85 76 78 L76 46 C76 41 74 37 72 34"/>
-      <path d="M26 20 L74 20 C76 20 77 22 77 24 L77 31 C77 33 76 34 74 34 L26 34 C24 34 23 33 23 31 L23 24 C23 22 24 20 26 20 Z"/>
-      <path d="M25 54 C36 50 64 50 75 54" stroke-width="1" opacity=".6"/>
+    <ellipse cx="50" cy="92" rx="28" ry="4" fill="#4B3427" opacity=".16"/>
+    <path d="M28 26 C24 40 22 62 24 84 C24 88 27 90 31 90 L69 90 C73 90 76 88 76 84 C78 62 76 40 72 26 Z" fill="#D5BE9A" filter="url(#wc)"/>
+    <path d="M66 28 C70 44 71 64 70 88 L69 90 C73 90 76 88 76 84 C78 62 76 40 72 26 Z" fill="#B99D74" opacity=".7" filter="url(#wc)"/>
+    <path d="M30 10 C40 8 60 8 70 10 L73 27 C60 29 40 29 27 27 Z" fill="#C8AE86" filter="url(#wc)"/>
+    <path d="M36 16 h10 M54 18 h12 M40 22 h8" stroke="#A88B62" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    <path d="M34 40 L66 40 L66 78 L34 78 Z" fill="#F1DEC4" filter="url(#wc)"/>
+    <g fill="none" stroke="#9A6A3E" stroke-width="1" stroke-linecap="round" filter="url(#ink)">
+      <path d="M36 42 L64 42 L64 76 L36 76 Z"/>
+      <path d="M40 46 c-2 -2 1 -4 3 -2 c2 2 0 4 -2 3 M60 46 c2 -2 -1 -4 -3 -2 c-2 2 0 4 2 3"/>
+      <path d="M40 72 c-2 2 1 4 3 2 c2 -2 0 -4 -2 -3 M60 72 c2 2 -1 4 -3 2 c-2 -2 0 -4 2 -3"/>
+      <path d="M45 72 c1.5 -2 3.5 -2 5 0 c1.5 2 3.5 2 5 0"/>
+    </g>
+    <path d="M50 49.5 c-1.5 -2 -4 -.5 -2.5 1.5 l2.5 2.5 l2.5 -2.5 c1.5 -2 -1 -3.5 -2.5 -1.5 Z" fill="#A3302A"/>
+    <path d="M40 55 C45 54.6 55 55.4 60 55" fill="none" stroke="#A3302A" stroke-width="1.2" stroke-linecap="round"/>
+    <g fill="none" stroke="#4B3427" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" filter="url(#ink)">
+      <path d="M28 26 C24 40 22 62 24 84 C24 88 27 90 31 90 L69 90 C73 90 76 88 76 84 C78 62 76 40 72 26"/>
+      <path d="M30 10 C40 8 60 8 70 10 L73 27 C60 29 40 29 27 27 Z"/>
+      <path d="M32 30 C30 50 30 70 31 88 M68 30 C70 50 70 70 69 88" stroke-width=".8" opacity=".45"/>
     </g>
   </symbol>
 
@@ -609,7 +618,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       startLabel: "Початок замісу", startNow: "почати зараз", startHint: "Увесь план нижче рахується від цього часу.",
       nowPrefix: "зараз за планом: ", nowTag: "зараз",
       reset: "скинути всі відмітки", resetArm: "натисни ще раз, щоб скинути", resetDone: "відмітки скинуто",
-      bye: "Смачного!",
+      bye: "Смачного!", sugarWord: "ЦУКОР",
       credit: "Основа: Swedish Cinnamon Buns (Cecilia Tolone, Fest &amp; Fika) і булочка Cardy B",
       knot: ["пласт + начинка", "скласти навпіл", "8 смужок", "скрутити джгутом", "вузлик"],
       knotAlt: "Схема: пласт з начинкою складають навпіл, ріжуть на 8 смужок, кожну скручують джгутом і зав'язують у вузлик",
@@ -628,7 +637,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       startLabel: "Start mixing at", startNow: "start now", startHint: "Every time in the plan below follows this.",
       nowPrefix: "right now: ", nowTag: "now",
       reset: "clear all ticks", resetArm: "tap again to clear", resetDone: "ticks cleared",
-      bye: "Enjoy!",
+      bye: "Enjoy!", sugarWord: "SUGAR",
       credit: "Based on Swedish Cinnamon Buns by Cecilia Tolone (Fest &amp; Fika) and the Cardy B bun",
       knot: ["sheet + filling", "fold in half", "8 strips", "twist into a rope", "knot"],
       knotAlt: "Diagram: the filled sheet is folded in half, cut into 8 strips, each strip twisted into a rope and tied into a knot",
@@ -785,7 +794,10 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   }
   function L() { return UI[S.lang]; }
   function art(name, cls) {
-    return '<svg class="' + (cls || "art") + '" viewBox="' + (VB[name] || "0 0 100 100") + '" aria-hidden="true"><use href="#' + name + '"/></svg>';
+    var extra = name === "sugar"
+      ? '<text x="50" y="66" text-anchor="middle" font-family="Neucha, cursive" font-size="9.5" letter-spacing=".6" fill="#A3302A">' + L().sugarWord + '</text>'
+      : "";
+    return '<svg class="' + (cls || "art") + '" viewBox="' + (VB[name] || "0 0 100 100") + '" aria-hidden="true"><use href="#' + name + '"/>' + extra + '</svg>';
   }
   var star = '<svg viewBox="0 0 20 20" aria-hidden="true"><use href="#star"/></svg>';
 
