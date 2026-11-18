@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Кардамонові булочки-вузлики на 16 штук: рецепт з планом дня, українською або англійською, у грамах або чашках.">
 <meta property="og:title" content="Кардамонові вузлики">
-<meta property="og:description" content="Рецепт кардамонових булочок-вузликів з планом дня від 16:30.">
+<meta property="og:description" content="Рецепт кардамонових булочок-вузликів з планом дня від обраного часу.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Кардамонові вузлики</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,8 +207,19 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
 .finish p { margin: 2px 0 0; }
 .finish .fin-title { font-family: var(--script); font-size: 30px; }
 
-.knot { margin: 10px 0 0 34px; overflow-x: auto; }
-.knot svg { display: block; width: 100%; min-width: 280px; height: auto; }
+.knot { margin: 12px 0 0; }
+.knot svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; }
+.start { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; margin: 0 0 4px; }
+.start label { font-size: 18px; }
+.start input {
+  font: inherit; font-size: 21px; color: var(--ink); background: var(--card);
+  border: 1.5px solid var(--ink); border-radius: var(--wobble); padding: 3px 10px;
+}
+.start-now {
+  font: inherit; font-size: 15px; padding: 4px 12px; border: 1.5px dashed var(--ink-soft); border-radius: 999px;
+  background: transparent; color: var(--ink-soft); cursor: pointer;
+}
+.start-hint { margin: 0 0 8px; text-align: center; font-size: 15px; color: var(--sage); }
 
 /* Tips */
 .tips { display: grid; gap: 14px; }
@@ -231,7 +242,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
 
 @media (max-width: 380px) {
   h1 { font-size: 50px; }
-  ul.steps, .tag, .sub, .stage .note, .knot { margin-left: 0; }
+  ul.steps, .tag, .sub, .stage .note { margin-left: 0; }
   .wake span { display: none; }
 }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
@@ -264,6 +275,7 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
 
     <path id="s-pod" d="M20 4 C31 12 33 38 22 54 C21 56.5 19 56.5 18 54 C7 38 9 12 20 4 Z"/>
     <path id="s-bun" d="M52 9 C76 10 93 28 91 52 C89 75 72 92 48 91 C25 90 9 73 10 50 C11 27 28 8 52 9 Z"/>
+    <path id="s-blob" d="M50 12 C62 10 70 16 76 22 C86 26 90 38 88 48 C93 58 88 70 80 76 C76 86 64 90 54 88 C44 93 32 88 26 80 C16 76 10 64 13 54 C8 44 13 32 22 26 C28 16 40 10 50 12 Z"/>
     <path id="s-knot" d="M30 63 C17 45 29 22 52 21 C75 21 84 44 73 61 C62 77 37 75 35 57 C33 42 50 35 59 44 C65 51 58 61 50 58"/>
     <path id="s-lemon" d="M40 6 C60 5 75 20 74 41 C73 61 58 75 39 74 C19 73 6 59 6 40 C6 20 21 7 40 6 Z"/>
     <path id="s-lemon-in" d="M40 12 C56 12 68 24 68 40 C68 56 56 68 40 68 C24 68 12 56 12 40 C12 24 24 12 40 12 Z"/>
@@ -316,19 +328,28 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   </symbol>
 
   <symbol id="bun" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <use href="#s-bun" fill="#CF9852" filter="url(#wc)"/>
-    <use href="#s-knot" fill="none" stroke="#E9C17C" stroke-width="13" stroke-linecap="round" filter="url(#wc)"/>
-    <use href="#s-knot" fill="none" stroke="#8A5A2E" stroke-width="2.2" stroke-dasharray="5 7" stroke-linecap="round" filter="url(#ink)"/>
-    <g fill="none" stroke="#4B3427" stroke-width="1.6" filter="url(#ink)"><use href="#s-bun"/></g>
+    <use href="#s-blob" fill="#A9692F" filter="url(#wc)"/>
+    <ellipse cx="50" cy="50" rx="29" ry="16" transform="rotate(-28 50 50)" fill="none" stroke="#E7B96F" stroke-width="14" filter="url(#wc)"/>
+    <ellipse cx="50" cy="50" rx="29" ry="16" transform="rotate(-28 50 50)" fill="none" stroke="#87521F" stroke-width="12" stroke-dasharray="2.4 5.6" opacity=".75" filter="url(#ink)"/>
+    <g transform="rotate(-28 50 50)" fill="none" stroke="#4B3427" stroke-width=".9" opacity=".6" filter="url(#ink)"><ellipse cx="50" cy="50" rx="36" ry="23"/><ellipse cx="50" cy="50" rx="22" ry="9"/></g>
+    <ellipse cx="50" cy="51" rx="27" ry="15" transform="rotate(38 50 51)" fill="none" stroke="#EDC27A" stroke-width="13" filter="url(#wc)"/>
+    <ellipse cx="50" cy="51" rx="27" ry="15" transform="rotate(38 50 51)" fill="none" stroke="#87521F" stroke-width="11" stroke-dasharray="2.4 5.6" stroke-dashoffset="3" opacity=".75" filter="url(#ink)"/>
+    <g transform="rotate(38 50 51)" fill="none" stroke="#4B3427" stroke-width=".9" opacity=".6" filter="url(#ink)"><ellipse cx="50" cy="51" rx="33.5" ry="21.5"/><ellipse cx="50" cy="51" rx="20.5" ry="8.5"/></g>
+    <path d="M43 47 C50 38 63 45 57 55 C53 61 44 58 46 51" fill="none" stroke="#F0C780" stroke-width="10" stroke-linecap="round" filter="url(#wc)"/>
+    <path d="M43 47 C50 38 63 45 57 55 C53 61 44 58 46 51" fill="none" stroke="#87521F" stroke-width="8" stroke-dasharray="2 5" opacity=".75" filter="url(#ink)"/>
+    <ellipse cx="50" cy="50" rx="29" ry="16" transform="rotate(-28 50 50)" fill="none" stroke="#FBE3AE" stroke-width="2.4" stroke-dasharray="6 16" stroke-linecap="round" opacity=".9"/>
+    <ellipse cx="50" cy="51" rx="27" ry="15" transform="rotate(38 50 51)" fill="none" stroke="#FBE3AE" stroke-width="2.2" stroke-dasharray="5 17" stroke-dashoffset="8" stroke-linecap="round" opacity=".9"/>
+    <g fill="none" stroke="#4B3427" stroke-width="1.5" filter="url(#ink)"><use href="#s-blob"/></g>
     <g fill="#FFFDF7">
-      <circle cx="40" cy="30" r="2.6"/><circle cx="62" cy="27" r="2.2"/><circle cx="74" cy="46" r="2.5"/>
-      <circle cx="66" cy="66" r="2.3"/><circle cx="44" cy="70" r="2.6"/><circle cx="30" cy="50" r="2.2"/>
-      <circle cx="52" cy="47" r="2"/><circle cx="56" cy="80" r="2"/><circle cx="22" cy="66" r="1.9"/>
-      <circle cx="80" cy="62" r="1.8"/><circle cx="36" cy="18" r="1.7"/>
+      <rect x="36" y="27" width="4.5" height="3.5" rx="1.2" transform="rotate(20 38 29)"/><circle cx="62" cy="29" r="2.2"/>
+      <rect x="71" y="45" width="4" height="3.5" rx="1.2" transform="rotate(-15 73 47)"/><circle cx="66" cy="68" r="2.3"/>
+      <rect x="40" y="69" width="4.5" height="3.6" rx="1.2" transform="rotate(35 42 71)"/><circle cx="27" cy="50" r="2.1"/>
+      <circle cx="52" cy="35" r="1.8"/><circle cx="56" cy="80" r="2"/><circle cx="22" cy="64" r="1.8"/>
+      <circle cx="80" cy="60" r="1.7"/><circle cx="31" cy="34" r="1.7"/>
     </g>
     <g fill="#3A2A1C" opacity=".6">
-      <circle cx="47" cy="34" r=".9"/><circle cx="69" cy="38" r="1"/><circle cx="58" cy="70" r=".9"/>
-      <circle cx="35" cy="62" r="1"/><circle cx="26" cy="38" r=".8"/><circle cx="78" cy="54" r=".9"/>
+      <circle cx="46" cy="31" r=".9"/><circle cx="69" cy="38" r="1"/><circle cx="58" cy="72" r=".9"/>
+      <circle cx="35" cy="62" r="1"/><circle cx="26" cy="41" r=".8"/><circle cx="76" cy="55" r=".9"/>
     </g>
   </symbol>
 
@@ -381,17 +402,17 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   </symbol>
 
   <symbol id="sugar" viewBox="0 0 100 100">
-    <ellipse cx="50" cy="92" rx="24" ry="4" fill="#4B3427" opacity=".16"/>
-    <path d="M26 48 C28 28 40 18 50 18 C62 18 72 28 74 48 Z" fill="#FFFDF7" filter="url(#wc)"/>
-    <g fill="#C7A577" opacity=".8"><circle cx="40" cy="34" r=".9"/><circle cx="52" cy="28" r=".9"/><circle cx="60" cy="38" r=".9"/><circle cx="46" cy="42" r=".8"/><circle cx="64" cy="30" r=".8"/></g>
-    <path d="M80 52 C94 52 94 66 76 66" fill="none" stroke="#D8834F" stroke-width="5" stroke-linecap="round" filter="url(#wc)"/>
-    <use href="#s-cup" fill="#D8834F" filter="url(#wc)"/>
-    <path d="M24 56 L30 63 L36 56 L42 63 L48 56 L54 63 L60 56 L66 63 L72 56 L76 60" fill="none" stroke="#5F6E3D" stroke-width="2.6" stroke-linejoin="round" filter="url(#wc)"/>
-    <path d="M38 75 L62 75 L66 86 L34 86 Z" fill="#BE6B3D" filter="url(#wc)"/>
-    <g fill="none" stroke="#4B3427" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
-      <use href="#s-cup"/>
-      <path d="M38 75 L34 86 L66 86 L62 75 M81 50 C97 50 97 69 75 68"/>
-      <path d="M27 47 C29 28 40 18 50 18 C62 18 71 28 73 47" stroke-width="1.1"/>
+    <ellipse cx="50" cy="92" rx="27" ry="4" fill="#4B3427" opacity=".16"/>
+    <path d="M28 32 C26 36 24 40 24 46 L24 78 C24 85 29 89 36 89 L64 89 C71 89 76 85 76 78 L76 46 C76 40 74 36 72 32 Z" fill="#DCE9E7" opacity=".75" filter="url(#wc)"/>
+    <path d="M25 54 C36 50 64 50 75 54 L75 78 C75 84 70 88 64 88 L36 88 C30 88 25 84 25 78 Z" fill="#FFFEFA" filter="url(#wc)"/>
+    <g fill="#C9C0AF"><circle cx="34" cy="62" r=".9"/><circle cx="44" cy="70" r=".9"/><circle cx="58" cy="60" r=".9"/><circle cx="66" cy="72" r=".9"/><circle cx="50" cy="80" r=".9"/><circle cx="38" cy="79" r=".8"/><circle cx="62" cy="83" r=".8"/><circle cx="70" cy="63" r=".8"/></g>
+    <path d="M31 46 C30 56 30 68 32 79" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+    <path d="M26 20 L74 20 C76 20 77 22 77 24 L77 31 C77 33 76 34 74 34 L26 34 C24 34 23 33 23 31 L23 24 C23 22 24 20 26 20 Z" fill="#C0634A" filter="url(#wc)"/>
+    <g fill="#FAF4E8"><circle cx="29" cy="27" r="1.4"/><circle cx="35" cy="27" r="1.4"/><circle cx="41" cy="27" r="1.4"/><circle cx="47" cy="27" r="1.4"/><circle cx="53" cy="27" r="1.4"/><circle cx="59" cy="27" r="1.4"/><circle cx="65" cy="27" r="1.4"/><circle cx="71" cy="27" r="1.4"/></g>
+    <g fill="none" stroke="#4B3427" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#ink)">
+      <path d="M28 34 C26 37 24 41 24 46 L24 78 C24 85 29 89 36 89 L64 89 C71 89 76 85 76 78 L76 46 C76 41 74 37 72 34"/>
+      <path d="M26 20 L74 20 C76 20 77 22 77 24 L77 31 C77 33 76 34 74 34 L26 34 C24 34 23 33 23 31 L23 24 C23 22 24 20 26 20 Z"/>
+      <path d="M25 54 C36 50 64 50 75 54" stroke-width="1" opacity=".6"/>
     </g>
   </symbol>
 
@@ -565,12 +586,13 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
     t210:   ["210–220°C", "210–220°C", "410–430°F", "410–430°F"],
     t200:   ["200°C", "200°C", "390°F", "390°F"],
     d2cm:   ["~2 см", "~2 cm", "~¾ дюйма", "~¾ in"],
-    sheet:  ["~25×50 см", "~25×50 cm", "~10×20 дюймів", "~10×20 in"],
-    thick:  ["~0,5 см", "~0.5 cm", "~¼ дюйма", "~¼ in"],
-    fold:   ["~17×25 см", "~17×25 cm", "~6½×10 дюймів", "~6½×10 in"],
+    sheet:  ["~30×40 см", "~30×40 cm", "~12×16 дюймів", "~12×16 in"],
+    thick:  ["~0,6 см", "~0.6 cm", "~¼ дюйма", "~¼ in"],
+    fold:   ["~20×30 см", "~20×30 cm", "~8×12 дюймів", "~8×12 in"],
+    roll:   ["~24×32 см", "~24×32 cm", "~9½×12½ дюйма", "~9½×12½ in"],
     strip:  ["~3 см", "~3 cm", "~1¼ дюйма", "~1¼ in"],
-    gap:    ["1–2 см", "1–2 cm", "½–¾ дюйма", "½–¾ in"],
-    stretch:["~25 см", "~25 cm", "~10 дюймів", "~10 in"]
+    stripL: ["~32 см", "~32 cm", "~12½ дюйма", "~12½ in"],
+    stretch:["~40 см", "~40 cm", "~16 дюймів", "~16 in"]
   };
 
   var UI = {
@@ -579,17 +601,18 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       navLabel: "Розділи", navIng: "Продукти", navPlan: "План", navTips: "Поради",
       wake: "Не гасити екран", wakeShort: "екран", wakeNA: "недоступно",
       title: "Кардамонові вузлики", subtitle: "шведський рецепт + Cardy B",
-      meta: ["16 шт", "{bunW} кожна", "заміс руками", "16:30 → 21:10"],
+      meta: ["16 шт", "{bunW} кожна", "заміс руками", "{@0} → {@280}"],
       heroAlt: "Намальована тарілка з трьома булочками-вузликами, кардамоном і лимоном",
       ingTitle: "Продукти", yeastQ: "Які дріжджі в тебе?",
       yeastOpts: { instant: "сухі швидкодіючі", active: "сухі звичайні", fresh: "свіжі" },
       planTitle: "План дня", tipsTitle: "Поради",
+      startLabel: "Початок замісу", startNow: "почати зараз", startHint: "Увесь план нижче рахується від цього часу.",
       nowPrefix: "зараз за планом: ", nowTag: "зараз",
       reset: "скинути всі відмітки", resetArm: "натисни ще раз, щоб скинути", resetDone: "відмітки скинуто",
       bye: "Смачного!",
       credit: "Основа: Swedish Cinnamon Buns (Cecilia Tolone, Fest &amp; Fika) і булочка Cardy B",
-      knot: ["пласт + начинка", "утричі", "надрізати", "вузлик"],
-      knotAlt: "Схема: пласт з начинкою, складений утричі, надрізана смужка, готовий вузлик",
+      knot: ["пласт + начинка", "скласти навпіл", "8 смужок", "скрутити джгутом", "вузлик"],
+      knotAlt: "Схема: пласт з начинкою складають навпіл, ріжуть на 8 смужок, кожну скручують джгутом і зав'язують у вузлик",
       trayAlt: "Деко з чотирма спеченими вузликами"
     },
     en: {
@@ -597,17 +620,18 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
       navLabel: "Sections", navIng: "Ingredients", navPlan: "Plan", navTips: "Tips",
       wake: "Keep the screen on", wakeShort: "screen", wakeNA: "not available",
       title: "Cardamom Knots", subtitle: "a Swedish recipe + Cardy B",
-      meta: ["16 buns", "{bunW} each", "kneaded by hand", "16:30 → 21:10"],
+      meta: ["16 buns", "{bunW} each", "kneaded by hand", "{@0} → {@280}"],
       heroAlt: "A painted plate with three cardamom knots, pods and a lemon",
       ingTitle: "Ingredients", yeastQ: "Which yeast do you have?",
       yeastOpts: { instant: "instant", active: "active dry", fresh: "fresh" },
       planTitle: "The plan", tipsTitle: "Tips",
+      startLabel: "Start mixing at", startNow: "start now", startHint: "Every time in the plan below follows this.",
       nowPrefix: "right now: ", nowTag: "now",
       reset: "clear all ticks", resetArm: "tap again to clear", resetDone: "ticks cleared",
       bye: "Enjoy!",
       credit: "Based on Swedish Cinnamon Buns by Cecilia Tolone (Fest &amp; Fika) and the Cardy B bun",
-      knot: ["sheet + filling", "fold in thirds", "slit", "knot"],
-      knotAlt: "Diagram: filled sheet, folded in thirds, a slit strip, the finished knot",
+      knot: ["sheet + filling", "fold in half", "8 strips", "twist into a rope", "knot"],
+      knotAlt: "Diagram: the filled sheet is folded in half, cut into 8 strips, each strip twisted into a rope and tied into a knot",
       trayAlt: "A tray of four baked knots"
     }
   };
@@ -658,14 +682,14 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   ];
 
   var STAGES = [
-    { icon: true, start: "15:30", end: "16:30", title: { uk: "Дістати з холодильника", en: "Take out of the fridge" }, steps: [
+    { icon: true, o: -60, e: 0, title: { uk: "Дістати з холодильника", en: "Take out of the fridge" }, steps: [
       ["p-0a", { uk: "Масло {butterAll}: має стати м'яким, як крем", en: "Butter, {butterAll}: it should get soft as cream" }],
       ["p-0b", { uk: "Яйце", en: "The egg" }] ] },
-    { icon: true, yeast: "active", start: "16:15", end: "16:30", title: { uk: "Активувати дріжджі", en: "Proof the yeast" },
+    { icon: true, yeast: "active", o: -15, e: 0, title: { uk: "Активувати дріжджі", en: "Proof the yeast" },
       tag: { uk: "лише для звичайних сухих", en: "active dry yeast only" }, steps: [
       ["p-aa", { uk: "Підігрій {milk} молока до {t3538}, всип {yActive} дріжджів і щіпку цукру.", en: "Warm {milk} milk to {t3538}, stir in {yActive} yeast and a pinch of sugar." }],
       ["p-ab", { uk: "Зачекай 10–15 хв, поки з'явиться піна. Якщо через 30 хв бульбашок немає, дріжджі мертві.", en: "Wait 10–15 min until foamy. No bubbles after 30 min means the yeast is dead." }] ] },
-    { num: 1, start: "16:30", end: "16:45", title: { uk: "Заміс без масла", en: "Mix, no butter yet" }, steps: [
+    { num: 1, o: 0, e: 15, title: { uk: "Заміс без масла", en: "Mix, no butter yet" }, steps: [
       ["p-1a", {
         instant: { uk: "Підігрій {milk} молока до {t3035}: приємно тепле, не гаряче. Додай яйце.", en: "Warm {milk} milk to {t3035}: pleasantly warm, not hot. Add the egg." },
         active:  { uk: "У молоко з активованими дріжджами додай яйце.", en: "Add the egg to the milk with the proofed yeast." },
@@ -676,50 +700,51 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
         fresh:   { uk: "У мисці змішай борошно, цукор, сіль і {cardD} кардамону.", en: "In a bowl, mix the flour, sugar, salt and {cardD} cardamom." } }],
       ["p-1c", { uk: "Влий рідину. Перемішай лопаткою, потім рукою, поки не зникне сухе борошно. Тісто буде грудкувате, це нормально.", en: "Pour in the liquid. Stir with a spatula, then by hand, until no dry flour is left. Shaggy is fine." }],
       ["p-1d", { uk: "Лишились сухі шматки або борошно «сильне» (білка 12% і більше)? Додай резервні {milkR} молока.", en: "Dry bits left, or a strong flour (12%+ protein)? Add the reserve {milkR} milk." }] ] },
-    { rest: true, start: "16:45", end: "17:05", title: { uk: "відпочинок 20 хв", en: "rest 20 min" },
+    { rest: true, o: 15, e: 35, title: { uk: "відпочинок 20 хв", en: "rest 20 min" },
       text: { uk: "Накрий миску. Клейковина почне формуватися сама.", en: "Cover the bowl. The gluten starts forming on its own." } },
-    { num: 2, start: "17:05", end: "17:20", title: { uk: "Вимішування без масла", en: "Knead, no butter" }, steps: [
+    { num: 2, o: 35, e: 50, title: { uk: "Вимішування без масла", en: "Knead, no butter" }, steps: [
       ["p-2a", { uk: "Виклади тісто на чистий стіл без борошна.", en: "Tip the dough onto a clean, unfloured counter." }],
       ["p-2b", { uk: "Місі 12–15 хв: тисни основою долоні від себе, складай навпіл, повертай на 90°.", en: "Knead 12–15 min: push away with the heel of your hand, fold in half, turn 90°." }],
       ["p-2c", { uk: "Борошно не підсипай (максимум 1–2 ст. л. за весь час). Липке тісто знімай скребком.", en: "Don't add flour (1–2 tbsp at most in total). Lift sticky dough with a scraper." }],
       ["p-2d", { uk: "Готове тісто гладке, пружне і ледь липке.", en: "It's ready when smooth, springy and barely tacky." }] ] },
-    { rest: true, start: "17:20", end: "17:30", title: { uk: "відпочинок 10 хв", en: "rest 10 min" },
+    { rest: true, o: 50, e: 60, title: { uk: "відпочинок 10 хв", en: "rest 10 min" },
       text: { uk: "Накрий перевернутою мискою. Масло потім увійде легше.", en: "Cover with the upturned bowl. The butter will go in more easily." } },
-    { num: 3, start: "17:30", end: "17:45", title: { uk: "Додаємо масло", en: "Work in the butter" }, steps: [
+    { num: 3, o: 60, e: 75, title: { uk: "Додаємо масло", en: "Work in the butter" }, steps: [
       ["p-3a", { uk: "Додай {butterD} м'якого масла у три прийоми. Тісто стане слизьким, але через 2–3 хв знову збереться.", en: "Add {butterD} soft butter in three goes. The dough turns slippery, then comes back together in 2–3 min." }],
       ["p-3b", { uk: "Після останньої порції місі ще 8–10 хв до шовковистого тіста.", en: "After the last piece, knead 8–10 min more until silky." }],
       ["p-3c", { uk: "Тест «віконце»: розтягни шматочок вологими пальцями. Має тягнутися тонко і рватися з рівними краями.", en: "Windowpane test: stretch a piece with wet fingers. It should go thin and tear with smooth edges." }],
       ["p-3d", { uk: "Скатай у кулю, поклади в змащену миску, накрий.", en: "Shape into a ball, put it in a greased bowl, cover." }] ] },
-    { rest: true, start: "17:45", end: "18:15", title: { uk: "у теплі 30 хв", en: "30 min somewhere warm" },
-      text: { uk: "О 18:00 одне складання: підтягни край тіста вгору і поклади на центр, з чотирьох боків.", en: "At 18:00, one set of folds: lift an edge of the dough and lay it over the centre, on all four sides." } },
-    { num: 4, start: "18:15", end: "18:50", title: { uk: "Охолодження", en: "Chill" }, steps: [
+    { rest: true, o: 75, e: 105, title: { uk: "у теплі 30 хв", en: "30 min somewhere warm" },
+      text: { uk: "О {@90} одне складання: підтягни край тіста вгору і поклади на центр, з чотирьох боків.", en: "At {@90}, one set of folds: lift an edge of the dough and lay it over the centre, on all four sides." } },
+    { num: 4, o: 105, e: 140, title: { uk: "Охолодження", en: "Chill" }, steps: [
       ["p-4a", { uk: "Поділи тісто навпіл (по {half}). Кожну частину розплющ у прямокутник завтовшки {d2cm}.", en: "Halve the dough ({half} each). Flatten each into a rectangle {d2cm} thick." }],
       ["p-4b", { uk: "Загорни в плівку, у холодильник на 30–35 хв.", en: "Wrap in film and chill for 30–35 min." }] ],
       sub: { uk: "поки тісто в холоді", en: "while it chills" }, steps2: [
-      ["p-4c", { uk: "18:20 · Начинка: розітри масло з цукром, кардамоном, сіллю і ваніллю до пасти. У холодильник не став.", en: "18:20 · Filling: beat the butter with the sugar, cardamom, salt and vanilla to a paste. Keep it out of the fridge." }],
-      ["p-4d", { uk: "18:30 · Сироп: воду, цукор і лимонний сік довести до кипіння, зняти з вогню.", en: "18:30 · Syrup: bring the water, sugar and lemon juice to a boil, take off the heat." }],
+      ["p-4c", { uk: "{@110} · Начинка: розітри масло з цукром, кардамоном, сіллю і ваніллю до пасти. У холодильник не став.", en: "{@110} · Filling: beat the butter with the sugar, cardamom, salt and vanilla to a paste. Keep it out of the fridge." }],
+      ["p-4d", { uk: "{@120} · Сироп: воду, цукор і лимонний сік довести до кипіння, зняти з вогню.", en: "{@120} · Syrup: bring the water, sugar and lemon juice to a boil, take off the heat." }],
       ["p-4e", { uk: "Дістати зерна з коробочок кардамону, злегка розтовкти, змішати з цукром для посипки.", en: "Take the seeds out of the cardamom pods, crush them lightly and mix with the topping sugar." }],
       ["p-4f", { uk: "Застелити 2 деки пергаментом.", en: "Line 2 baking trays with parchment." }] ] },
-    { num: 5, start: "18:50", end: "19:25", title: { uk: "Формування вузликів", en: "Shape the knots" },
+    { num: 5, o: 140, e: 175, title: { uk: "Формування вузликів", en: "Shape the knots" },
       noteBefore: { uk: "Одна половина в роботі, друга чекає в холодильнику.", en: "Work with one half; the other waits in the fridge." }, diagram: true, steps: [
       ["p-5a", { uk: "Розкачай у прямокутник {sheet}, завтовшки {thick}.", en: "Roll out to a {sheet} rectangle, {thick} thick." }],
-      ["p-5b", { uk: "Намаж половину начинки до самих країв.", en: "Spread half the filling right to the edges." }],
-      ["p-5c", { uk: "Склади втричі, як лист. Вийде {fold}. Легко пройдись качалкою.", en: "Fold in thirds like a letter, to about {fold}. Roll over it lightly." }],
-      ["p-5d", { uk: "Наріж поперек на 8 смужок завширшки {strip}.", en: "Cut across into 8 strips, {strip} wide." }],
-      ["p-5e", { uk: "Кожну смужку надріж уздовж, не дорізаючи {gap} до краю. Перекрути половинки, розтягни до {stretch}.", en: "Slit each strip lengthwise, leaving {gap} uncut at the top. Twist the two legs together, stretching to {stretch}." }],
-      ["p-5f", { uk: "Намотай джгут на два пальці, кінчик протягни через центр і притисни знизу.", en: "Wrap the rope around two fingers, pull the end through the middle and tuck it underneath." }],
-      ["p-5g", { uk: "8 вузликів на деко з проміжками. Повтори з другою половиною.", en: "Space 8 knots out on a tray. Repeat with the second half." }] ] },
-    { num: 6, start: "19:10", end: "20:30", title: { uk: "Розстойка 1–1,5 год", en: "Proof 1–1½ h" }, steps: [
+      ["p-5b", { uk: "Намаж половину начинки на весь пласт, до самих країв.", en: "Spread half the filling over the whole sheet, right to the edges." }],
+      ["p-5c", { uk: "Склади пласт навпіл, щоб накрити начинку. Вийде {fold}.", en: "Fold the sheet in half to cover the filling. It will be about {fold}." }],
+      ["p-5d", { uk: "Злегка розкачай складений пласт до {roll}, щоб шари злиплися.", en: "Roll it out lightly to {roll} so the layers stick together." }],
+      ["p-5e", { uk: "Наріж уздовж довшої сторони на 8 вузьких смужок завширшки {strip} (кожна завдовжки {stripL}).", en: "Cut along the long side into 8 narrow strips, {strip} wide ({stripL} long)." }],
+      ["p-5f", { uk: "Скрути кожну смужку джгутом: тримай за кінці й крути їх у протилежні боки, злегка розтягуючи до {stretch}.", en: "Twist each strip into a rope: hold the ends and turn them in opposite directions, stretching gently to {stretch}." }],
+      ["p-5g", { uk: "Намотай джгут двічі на два пальці, кінчик протягни через центр і заховай знизу.", en: "Wrap the rope twice around two fingers, pull the end through the middle and tuck it underneath." }],
+      ["p-5h", { uk: "8 вузликів на деко з проміжками. Повтори з другою половиною.", en: "Space 8 knots out on a tray. Repeat with the second half." }] ] },
+    { num: 6, o: 160, e: 240, title: { uk: "Розстойка 1–1,5 год", en: "Proof 1–1½ h" }, steps: [
       ["p-6a", { uk: "Накрий деки плівкою. Постав у вимкнену духовку з мискою окропу на дні, *{t2528}*.", en: "Cover the trays with film. Set them in the switched-off oven with a bowl of boiling water below, *{t2528}*." }],
       ["p-6b", { uk: "Через 30–40 хв заміни окріп.", en: "Refresh the hot water after 30–40 min." }],
       ["p-6c", { uk: "Готовність: булочки збільшилися в 1,5–2 рази, ямка від пальця повільно вирівнюється.", en: "Ready when 1½–2 times bigger and a fingertip dent springs back slowly." }],
-      ["p-6d", { uk: "~20:00 · Дістань деки з духовки і ввімкни розігрів на *{t210}*, верх-низ.", en: "~20:00 · Take the trays out and preheat to *{t210}*, top and bottom heat." }] ] },
-    { num: 7, start: "20:30", end: "21:00", title: { uk: "Випікання і сироп", en: "Bake and glaze" }, steps: [
+      ["p-6d", { uk: "~{@210} · Дістань деки з духовки і ввімкни розігрів на *{t210}*, верх-низ.", en: "~{@210} · Take the trays out and preheat to *{t210}*, top and bottom heat." }] ] },
+    { num: 7, o: 240, e: 270, title: { uk: "Випікання і сироп", en: "Bake and glaze" }, steps: [
       ["p-7a", { uk: "Перше деко: 10–13 хв. На 6-й хвилині розверни деко.", en: "First tray: 10–13 min. Turn it around at minute 6." }],
       ["p-7b", { uk: "*Одразу з печі* змасти теплим сиропом і посип цукром з кардамоном.", en: "*Straight from the oven*, brush with warm syrup and sprinkle with the cardamom sugar." }],
       ["p-7c", { uk: "Друге деко так само.", en: "Same for the second tray." }] ],
       noteAfter: { uk: "З конвекцією можна обидва деки разом на {t200}, поміняти місцями на середині.", en: "With a fan oven, bake both trays at once at {t200}, swapping them halfway." } },
-    { finish: true, start: "21:00", end: "21:30", time: "21:10", title: { uk: "охолодити 10–15 хв і їсти", en: "cool 10–15 min, then eat" } }
+    { finish: true, o: 270, e: 300, t: 280, title: { uk: "охолодити 10–15 хв і їсти", en: "cool 10–15 min, then eat" } }
   ];
 
   var TIPS = [
@@ -735,13 +760,17 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
 
   // ---------- state ----------
   var KEY = "kardamon-v2";
-  var S = { lang: "uk", units: "m", yeast: "instant", checks: {} };
+  var S = { lang: "uk", units: "m", yeast: "instant", start: "16:30", checks: {} };
   try {
     var saved = JSON.parse(localStorage.getItem(KEY) || "null");
     if (!saved) { var old = JSON.parse(localStorage.getItem("kardamon-v1") || "null"); if (old) saved = { yeast: old.yeast, checks: old.checks }; }
     if (saved) for (var k in saved) if (saved[k] != null) S[k] = saved[k];
   } catch (e) {}
+  if (!/^\d{2}:\d{2}$/.test(S.start)) S.start = "16:30";
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function hm(min) { min = ((min % 1440) + 1440) % 1440; var h = Math.floor(min / 60), m = min % 60; return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m; }
+  function startMin() { var p = S.start.split(":"); return +p[0] * 60 + +p[1]; }
+  function at(off) { return hm(startMin() + off); }
 
   var lock = null, hasWake = "wakeLock" in navigator;
   var app = document.getElementById("app");
@@ -750,7 +779,8 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   function pick(t) { return t && t.instant ? t[S.yeast] : t; }
   function tx(o) {
     var s = typeof o === "string" ? o : pick(o)[S.lang];
-    return s.replace(/\{(\w+)\}/g, function (m, k) { return Q[k] ? q(k) : m; })
+    return s.replace(/\{@(-?\d+)\}/g, function (m, o) { return at(+o); })
+            .replace(/\{(\w+)\}/g, function (m, k) { return Q[k] ? q(k) : m; })
             .replace(/\*(.+?)\*/g, '<span class="u">$1</span>');
   }
   function L() { return UI[S.lang]; }
@@ -836,23 +866,36 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
     }).join("") + '</ul>';
   }
   function knot() {
-    var k = L().knot;
-    return '<div class="knot"><svg viewBox="0 0 340 108" role="img" aria-label="' + L().knotAlt + '">' +
-      '<path d="M6 26 L96 22 L98 70 L8 74 Z" fill="#EBCB8F" filter="url(#wc)"/>' +
-      '<path d="M14 32 L90 29 L91 64 L15 67 Z" fill="#B9824A" opacity=".6" filter="url(#wc)"/>' +
-      '<g fill="#3A2A1C" opacity=".55"><circle cx="26" cy="40" r="1.2"/><circle cx="46" cy="56" r="1.2"/><circle cx="70" cy="38" r="1.2"/><circle cx="80" cy="58" r="1.2"/><circle cx="34" cy="60" r="1.1"/><circle cx="58" cy="46" r="1.1"/></g>' +
-      '<path d="M122 22 L156 21 L158 74 L124 75 Z" fill="#EBCB8F" filter="url(#wc)"/>' +
-      '<path d="M182 40 L246 38 L247 51 L183 53 Z" fill="#EBCB8F" filter="url(#wc)"/>' +
-      '<use href="#bun" x="268" y="14" width="64" height="64"/>' +
+    var k = L().knot, bands = "", cuts = "";
+    for (var t = 0.05; t < 0.97; t += 0.055) {
+      var x = 30 + 150 * t, y = 153 - 12 * t * (1 - t);
+      bands += "M" + x.toFixed(1) + " " + (y + 1).toFixed(1) + " l6 10 ";
+    }
+    for (var i = 1; i < 8; i++) { var cx = (252 + 66 * i / 8).toFixed(1); cuts += "M" + cx + " 20 L" + cx + " 83 "; }
+    return '<div class="knot"><svg viewBox="0 0 330 222" role="img" aria-label="' + L().knotAlt + '">' +
+      '<path d="M8 22 L98 19 L99 80 L9 82 Z" fill="#EBCB8F" filter="url(#wc)"/>' +
+      '<path d="M11 24 L96 21 L97 78 L12 80 Z" fill="#B9824A" opacity=".55" filter="url(#wc)"/>' +
+      '<g fill="#3A2A1C" opacity=".55"><circle cx="26" cy="38" r="1.2"/><circle cx="46" cy="58" r="1.2"/><circle cx="70" cy="36" r="1.2"/><circle cx="84" cy="64" r="1.2"/><circle cx="30" cy="66" r="1.1"/><circle cx="58" cy="46" r="1.1"/></g>' +
+      '<path d="M132 22 L177 21 L178 81 L133 82 Z" fill="#EBCB8F" filter="url(#wc)"/>' +
+      '<path d="M177 21 L222 22 L222 81 L178 81" fill="none" stroke="#86695A" stroke-width="1.1" stroke-dasharray="3 3"/>' +
+      '<path d="M177 21 L178 81" stroke="#4B3427" stroke-width="2.2" stroke-linecap="round"/>' +
+      '<path d="M252 18 L318 17 L318 84 L252 85 Z" fill="#EBCB8F" filter="url(#wc)"/>' +
+      '<path d="' + cuts + '" stroke="#BF6249" stroke-width="1.6" stroke-dasharray="4 3" stroke-linecap="round"/>' +
+      '<path d="M30 153 Q105 147 180 153 L180 165 Q105 159 30 165 Z" fill="#E9C17C" filter="url(#wc)"/>' +
+      '<circle cx="30" cy="159" r="6" fill="#E9C17C"/><circle cx="180" cy="159" r="6" fill="#E9C17C"/>' +
+      '<path d="' + bands + '" stroke="#9A6430" stroke-width="3" stroke-linecap="round" opacity=".8" filter="url(#ink)"/>' +
+      '<use href="#bun" x="238" y="122" width="74" height="74"/>' +
       '<g fill="none" stroke="#4B3427" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">' +
-        '<path d="M6 26 L96 22 L98 70 L8 74 Z"/><path d="M122 22 L156 21 L158 74 L124 75 Z"/>' +
-        '<path d="M123 39 L157 38 M123 57 L158 56" stroke-dasharray="3 3"/>' +
-        '<path d="M182 40 L246 38 L247 51 L183 53 Z"/>' +
-        '<path d="M102 47 C108 45 112 48 117 46 M112 42 L117 46 L112 50 M163 47 C168 45 172 48 177 46 M172 42 L177 46 L172 50 M251 46 C256 44 260 47 264 45 M259 41 L264 45 L259 49"/>' +
+        '<path d="M8 22 L98 19 L99 80 L9 82 Z M132 22 L177 21 L178 81 L133 82 Z M252 18 L318 17 L318 84 L252 85 Z"/>' +
+        '<path d="M212 16 C200 2 166 2 152 14 M152 14 l1.5 -7 M152 14 l7 -1.5"/>' +
+        '<path d="M104 50 C110 48 114 51 120 49 M115 45 L120 49 L115 53 M228 50 C234 48 238 51 244 49 M239 45 L244 49 L239 53"/>' +
+        '<path d="M24 153 Q105 141 186 153 M24 165 Q105 159 186 165" stroke-width="1" opacity=".55"/>' +
+        '<path d="M20 149 C10 152 10 166 20 169 M20 169 l-6 1 M20 169 l-3 -5 M190 149 C200 152 200 166 190 169 M190 149 l6 -1 M190 149 l3 5"/>' +
+        '<path d="M208 159 C214 157 218 160 226 158 M221 154 L226 158 L221 162"/>' +
       '</g>' +
-      '<path d="M193 45.5 L247 44.5" stroke="#BF6249" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round"/>' +
-      '<g font-family="Neucha, cursive" font-size="13" fill="#86695A" text-anchor="middle">' +
-        '<text x="52" y="98">' + k[0] + '</text><text x="140" y="98">' + k[1] + '</text><text x="214" y="98">' + k[2] + '</text><text x="300" y="98">' + k[3] + '</text>' +
+      '<g font-family="Neucha, cursive" font-size="14" fill="#86695A" text-anchor="middle">' +
+        '<text x="53" y="106">' + k[0] + '</text><text x="177" y="106">' + k[1] + '</text><text x="285" y="106">' + k[2] + '</text>' +
+        '<text x="105" y="210">' + k[3] + '</text><text x="275" y="210">' + k[4] + '</text>' +
       '</g></svg></div>';
   }
   function tray() {
@@ -869,16 +912,16 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   }
   function stage(s) {
     var l = L();
-    var se = ' data-start="' + s.start + '" data-end="' + s.end + '"';
+    var se = ' data-o="' + s.o + '" data-e="' + s.e + '"';
     if (s.rest) {
-      return '<div class="rest"' + se + '><div class="rest-head"><span class="time">' + s.start + '</span><span class="rest-title">' + tx(s.title) + '</span></div><div>' + tx(s.text) + '</div></div>';
+      return '<div class="rest"' + se + '><div class="rest-head"><span class="time">' + at(s.o) + '</span><span class="rest-title">' + tx(s.title) + '</span></div><div>' + tx(s.text) + '</div></div>';
     }
     if (s.finish) {
-      return '<div class="finish"' + se + '>' + tray() + '<p><span class="time">' + s.time + '</span> · <span class="fin-title">' + tx(s.title) + '</span></p></div>';
+      return '<div class="finish"' + se + '>' + tray() + '<p><span class="time">' + at(s.t) + '</span> · <span class="fin-title">' + tx(s.title) + '</span></p></div>';
     }
     var num = s.icon ? '<svg viewBox="0 0 40 60" aria-hidden="true"><use href="#pod"/></svg>' : s.num;
     return '<article class="stage"' + se + ' data-now="' + l.nowTag + '">' +
-      '<div class="stage-head"><span class="num">' + num + '</span><h4>' + tx(s.title) + '</h4><span class="time">' + s.start + '</span></div>' +
+      '<div class="stage-head"><span class="num">' + num + '</span><h4>' + tx(s.title) + '</h4><span class="time">' + at(s.o) + '</span></div>' +
       (s.tag ? '<p class="tag">' + tx(s.tag) + '</p>' : '') +
       (s.noteBefore ? '<p class="note">' + tx(s.noteBefore) + '</p>' : '') +
       steps(s.steps) +
@@ -888,8 +931,13 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
     '</article>';
   }
   function plan() {
-    return '<section id="plan"><h2>' + L().planTitle + '</h2><div class="day">' +
-      STAGES.filter(function (s) { return !s.yeast || s.yeast === S.yeast; }).map(stage).join("") + '</div></section>';
+    var l = L();
+    return '<section id="plan"><h2>' + l.planTitle + '</h2>' +
+      '<div class="start"><label for="start-time">' + l.startLabel + '</label>' +
+      '<input type="time" id="start-time" value="' + S.start + '" step="300">' +
+      '<button type="button" class="start-now" data-startnow="1">' + l.startNow + '</button></div>' +
+      '<p class="start-hint">' + l.startHint + '</p>' +
+      '<div class="day">' + STAGES.filter(function (s) { return !s.yeast || s.yeast === S.yeast; }).map(stage).join("") + '</div></section>';
   }
   function tips() {
     var l = L();
@@ -920,11 +968,11 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   }
 
   // ---------- "now" highlight ----------
-  function mins(t) { var p = t.split(":"); return +p[0] * 60 + +p[1]; }
   function markNow() {
-    var d = new Date(), m = d.getHours() * 60 + d.getMinutes(), label = "";
-    app.querySelectorAll("[data-start]").forEach(function (el) {
-      var on = m >= mins(el.dataset.start) && m < mins(el.dataset.end);
+    var d = new Date(), diff = d.getHours() * 60 + d.getMinutes() - startMin(), label = "";
+    diff = ((diff % 1440) + 1440) % 1440; if (diff >= 720) diff -= 1440;
+    app.querySelectorAll("[data-o]").forEach(function (el) {
+      var on = diff >= +el.dataset.o && diff < +el.dataset.e;
       el.classList.toggle("current", on);
       if (on) { var h = el.querySelector("h4, .rest-title, .fin-title"); if (h) label = h.textContent; }
     });
@@ -942,6 +990,10 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
     if (b.dataset.lang) { S.lang = b.dataset.lang; save(); render(); return; }
     if (b.dataset.units) { S.units = b.dataset.units; save(); render(); return; }
     if (b.dataset.yeast) { S.yeast = b.dataset.yeast; save(); render(); return; }
+    if (b.dataset.startnow) {
+      var n = new Date(), m = Math.ceil((n.getHours() * 60 + n.getMinutes()) / 5) * 5;
+      S.start = hm(m); save(); render(); return;
+    }
     if (b.id === "wake") { toggleWake(b); return; }
     if (b.id === "reset") {
       if (!b.classList.contains("armed")) {
@@ -958,6 +1010,10 @@ ul.steps input:checked + span { color: var(--ink-soft); text-decoration: line-th
   });
   document.addEventListener("change", function (e) {
     var c = e.target;
+    if (c.id === "start-time") {
+      if (/^\d{2}:\d{2}/.test(c.value)) { S.start = c.value.slice(0, 5); save(); render(); }
+      return;
+    }
     if (c.type !== "checkbox" || !c.id) return;
     if (c.checked) S.checks[c.id] = 1; else delete S.checks[c.id];
     save();
